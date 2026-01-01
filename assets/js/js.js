@@ -9,6 +9,7 @@ jQuery(function () {
     initHeaderScroll();
     initMobileNavbar();
     initSlickSliders();
+    initScrollToTop();
 });
 
 /* =========================
@@ -43,11 +44,26 @@ function initMobileNavbar() {
 }
 
 /* =========================
+   GalleryLightbox
+========================= */
+function initGalleryLightbox() {
+    GLightbox({
+        selector: '.glightbox',
+        touchNavigation: true,
+        loop: true,
+        zoomable: false
+    });
+}
+/* =========================
    Slick sliders
 ========================= */
 function initSlickSliders() {
     const $slider = jQuery('.slick');
     if (!$slider.length) return;
+
+    $slider.on('init', function () {
+        initGalleryLightbox();
+    });
 
     $slider.slick({
         slidesToShow: 3,
@@ -70,5 +86,25 @@ function initSlickSliders() {
                 settings: { slidesToShow: 1 }
             }
         ]
+    });
+}
+/* =========================
+   Scroll To Top
+========================= */
+function initScrollToTop() {
+    const btn = document.querySelector('.tr-scroll-top');
+    if (!btn) return;
+
+    const offset = 400; // 👈 change this freely
+
+    window.addEventListener('scroll', () => {
+        btn.classList.toggle('is-visible', window.scrollY > offset);
+    });
+
+    btn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
     });
 }
