@@ -55,11 +55,7 @@ body {
     --clr-secondary: #AE864B;
     --clr-warning: #f7a022;
     --clr-success: #09ca5f;
-    /* --clr-gray: #c2c6cd;
-    --clr-gray-1: #edeffe; */
-    /* 
-    --clr-third: #BB62FF;
-    --clr-info: #7E71FE; */
+    --header-height: 90px;
 }
 
 /*=============*/
@@ -202,8 +198,20 @@ a.btn-link:hover {
     position: absolute;
     width: 100%;
     top: 20px;
-    z-index: 10;
+    z-index: 1000;
+    background-color: transparent;
+    transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
 
+.tr-header.is-fixed {
+    top: 0;
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+}
+
+.tr-header.is-fixed .nav-link {
+    color: var(--clr-primary);
 }
 
 .tr-header .navbar {
@@ -225,12 +233,22 @@ a.btn-link:hover {
     line-height: 24px;
     color: white;
 }
+
 .tr-header .nav-link:hover {
     color: var(--clr-secondary);
 }
 
 .tr-header .navbar-nav {
     gap: 16px;
+}
+
+.tr-header .navbar-toggler {
+    border: 0;
+}
+.tr-header .navbar-toggler:focus,
+.tr-header .navbar-toggler:focus-visible {
+    outline: none;
+    box-shadow: none;
 }
 
 @media screen and (min-width: 1200px) {
@@ -246,6 +264,18 @@ a.btn-link:hover {
 }
 
 @media screen and (max-width: 991.98px) {
+    .tr-header:has(.navbar-collapse.show) {
+        background-color: #fff;
+    }
+
+    .tr-header .nav-link {
+        color: var(--clr-primary);
+    }
+    .tr-header .navbar-collapse {
+        margin-bottom: 20px;
+        text-align: center;
+    }
+
     .tr-header .btn-desktop {
         display: none;
     }
@@ -255,6 +285,7 @@ a.btn-link:hover {
 /* Sections */
 /* Hero */
 .tr-hero {
+    padding-top: var(--header-height, 90px);
     min-height: 100vh;
     background: url("../media/imgs/hero-bg.jpg") center/cover no-repeat;
     color: #fff;
@@ -583,11 +614,13 @@ a.btn-link:hover {
     opacity: 0.5;
 }
 
-.gallery-slider__item:hover img {
-    opacity: 1;
-    scale: 1.2;
-    rotate: 3deg;
-    transition: all 0.2s ease-in-out;
+@media (hover: hover) {
+    .gallery-slider__item:hover img {
+        opacity: 1;
+        scale: 1.2;
+        rotate: 3deg;
+        transition: all 0.2s ease-in-out;
+    }
 }
 
 .gallery-slider__item:hover .item-desc {
