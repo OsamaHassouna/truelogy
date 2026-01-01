@@ -204,46 +204,50 @@ a.btn-link:hover {
     top: 20px;
     z-index: 10;
 
-    .navbar {
-        padding: 0;
-    }
+}
 
-    .navbar-brand {
-        margin: 0;
-        padding: 0
-    }
+.tr-header .navbar {
+    padding: 0;
+}
 
-    .navbar-collapse {
-        flex-grow: initial;
-    }
+.tr-header .navbar-brand {
+    margin: 0;
+    padding: 0
+}
 
-    .nav-link {
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 24px;
-        color: white;
-    }
+.tr-header .navbar-collapse {
+    flex-grow: initial;
+}
 
-    .navbar-nav {
-        gap: 16px;
-    }
+.tr-header .nav-link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    color: white;
+}
+.tr-header .nav-link:hover {
+    color: var(--clr-secondary);
+}
 
-    @media screen and (min-width: 1200px) {
-        .navbar-nav {
-            gap: 30px;
-        }
-    }
+.tr-header .navbar-nav {
+    gap: 16px;
+}
 
-    @media screen and (min-width: 992px) {
-        .btn-mobile {
-            display: none;
-        }
+@media screen and (min-width: 1200px) {
+    .tr-header .navbar-nav {
+        gap: 30px;
     }
+}
 
-    @media screen and (max-width: 991.98px) {
-        .btn-desktop {
-            display: none;
-        }
+@media screen and (min-width: 992px) {
+    .tr-header .btn-mobile {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 991.98px) {
+    .tr-header .btn-desktop {
+        display: none;
     }
 }
 
@@ -327,11 +331,20 @@ a.btn-link:hover {
     border-radius: 16px;
     overflow: hidden;
     box-shadow: 0px 25px 50px -12px #00000040;
+    transition: all 0.2s ease-in-out;
 }
 
 .tr-about .img-container>img {
     object-fit: cover;
+    border-radius: 16px;
     height: 100%;
+    transition: all 0.2s ease-in-out;
+}
+
+.tr-about .img-container:hover {
+    rotate: -2deg;
+    scale: 0.95;
+    transition: all 0.2s ease-in-out;
 }
 
 .tr-about .section-title {
@@ -374,6 +387,7 @@ a.btn-link:hover {
     border-radius: 16px;
     box-shadow: 0px 4px 6px -4px #0000001A, 0px 10px 15px -3px #0000001A;
     padding-bottom: 32px;
+    transition: all 0.2s ease-in-out;
     /* height: 164px; */
 }
 
@@ -381,6 +395,8 @@ a.btn-link:hover {
     height: 256px;
     margin-bottom: 32px;
     overflow: hidden;
+    border-start-start-radius: 16px;
+    border-start-end-radius: 16px;
 }
 
 .tr-target-card .img-container>img {
@@ -388,6 +404,7 @@ a.btn-link:hover {
     height: 100%;
     border-start-start-radius: 16px;
     border-start-end-radius: 16px;
+    transition: all 0.2s ease-in-out;
 }
 
 .tr-target-card h5 {
@@ -408,6 +425,10 @@ a.btn-link:hover {
     text-align: center;
     color: var(--clr-body);
     min-height: 52px;
+}
+
+.tr-target-card:hover .img-container img {
+    scale: 1.2;
 }
 
 /*---------*/
@@ -443,6 +464,7 @@ a.btn-link:hover {
     border-radius: 16px;
     background-color: #FFFFFF80;
     text-align: center;
+    transition: all 0.2s ease-in-out;
 }
 
 .tr-management-card .icon-container {
@@ -453,6 +475,7 @@ a.btn-link:hover {
     color: var(--clr-secondary);
     margin-bottom: 24px;
     justify-self: center;
+    transition: all 0.2s ease-in-out;
 }
 
 .tr-management-card h5 {
@@ -468,6 +491,19 @@ a.btn-link:hover {
     font-weight: 400;
     line-height: 26px;
     color: #364153;
+}
+
+.tr-management-card:hover {
+    background-color: #FFFFFF;
+    transition: all 0.2s ease-in-out;
+}
+
+.tr-management-card:hover .icon-container {
+    transform: translateY(-5px);
+    background-color: var(--clr-secondary);
+    color: white;
+    box-shadow: 0 2px 0 1px rgb(40 69 65 / 80%);
+    transition: all 0.2s ease-in-out;
 }
 
 /*---------*/
@@ -641,6 +677,7 @@ a.btn-link:hover {
     padding-inline: 32px;
     position: absolute;
     bottom: 16px;
+    transition: all 0.2s ease-in-out;
 }
 
 .tr-service-card .icon-container {
@@ -651,6 +688,7 @@ a.btn-link:hover {
     background-color: var(--clr-secondary);
     margin-bottom: 16px;
     box-shadow: 0px 4px 6px -4px #0000001A, 0px 10px 15px -3px #0000001A;
+    transition: all 0.2s ease-in-out;
 }
 
 .tr-service-card h5 {
@@ -667,6 +705,16 @@ a.btn-link:hover {
     line-height: 26px;
     color: #E5E7EB;
     margin-bottom: 16px;
+}
+
+
+.tr-service-card:hover .service-content-wrapper {
+    translate: 0 -20px;
+}
+
+.tr-service-card:hover .icon-container {
+    rotate: 375deg;
+    /* rotate: 15deg; */
 }
 
 /*=============*/
