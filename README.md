@@ -1,5 +1,7 @@
 # Truelogy Residence
 
+**Live demo:** https://truelogy.vercel.app
+
 Landing site for **Truelogy Residence | ترولوجي ريزيدنس**, a residential real-estate project. Arabic-first.
 
 ## Stack
